@@ -10,11 +10,13 @@ INCUDIRS		:= 	imx6u \
 				 	bsp/clk \
 					bsp/led \
 					bsp/delay \
+					bsp/beep
 			
 SRCDIRS			:= 	project \
 					bsp/clk \
 					bsp/led \
 					bsp/delay \
+					bsp/beep
 
 INCLUDE 		:= 	$(patsubst %, -I %, $(INCUDIRS))
 
