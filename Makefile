@@ -10,13 +10,17 @@ INCUDIRS		:= 	imx6u \
 				 	bsp/clk \
 					bsp/led \
 					bsp/delay \
-					bsp/beep
+					bsp/beep \
+					bsp/key \
+					bsp/gpio
 			
 SRCDIRS			:= 	project \
 					bsp/clk \
 					bsp/led \
 					bsp/delay \
-					bsp/beep
+					bsp/beep \
+					bsp/key \
+					bsp/gpio
 
 INCLUDE 		:= 	$(patsubst %, -I %, $(INCUDIRS))
 
@@ -47,7 +51,7 @@ $(COBJS) : obj/%.o : %.c
 	$(CC) -Wall -nostdlib -c -O2 $(INCLUDE) -o $@ $<
 
 clean:
-	rm -rf $(TARGET).elf $(TARGET).bin $(TARGET).dis $(OBJS)
+	rm -rf $(TARGET).elf $(TARGET).bin $(TARGET).dis $(OBJS) load.imx
 
 print:
 	@echo INCLUDE = $(INCLUDE)
